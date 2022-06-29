@@ -4,6 +4,7 @@ import { JwtResponseI } from '../models/jwt-response';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { ActividadI } from '../models/actividad';
+import { Review } from '../models/review';
 
 
 @Injectable()
@@ -57,6 +58,10 @@ export class ActividadService {
   //Servicio para llamar todos los Docentes en Mongo
   allDocente() {
     return this.httpClient.get(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadAllDocentes`);
+  }
+
+  loadReviews(id_actividad){
+    return this.httpClient.post<Review[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadReviews`,{id_actividad:id_actividad})
   }
 
 }

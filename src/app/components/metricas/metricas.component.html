@@ -246,8 +246,8 @@
                                     </div>
                                     <div class="col my-auto" style="max-width: 840px;">
                                         <div class="card-body p-2" >
-                                            <div *ngFor =" let cal of listQualification">
-                                                <a class="card-text"><app-calificacion [calificacion]="cal.quantity"></app-calificacion></a>
+                                            <div *ngFor =" let review of reviews">
+                                                <a class="card-text"><app-calificacion [calificacion]="review.rating"></app-calificacion></a>
                                             </div>
                                         </div>
                                     </div>
