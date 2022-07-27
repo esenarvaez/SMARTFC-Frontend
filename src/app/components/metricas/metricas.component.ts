@@ -386,7 +386,7 @@ export class MetricasComponent implements OnInit {
   }
 
   loadReviews(actividad) {
-    this.ActividadService.loadReviews(actividad._id).subscribe(res => {
+    this.ActividadService.loadReviews(actividad.id_contenidoREA).subscribe(res => {
       this.reviews = res;
       console.log(this.reviews)
     }, error => {

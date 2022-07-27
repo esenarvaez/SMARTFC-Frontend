@@ -61,7 +61,7 @@ export class ActividadService {
   }
 
   loadReviews(id_actividad){
-    return this.httpClient.post<Review[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadReviews`,{id_actividad:id_actividad})
+    return this.httpClient.post<Review[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadReviews`,{id_contenidoREA:id_actividad})
   }
 
 }
