@@ -247,7 +247,7 @@
                                     <div class="col my-auto" style="max-width: 840px;">
                                         <div class="card-body p-2" >
                                             <div *ngFor =" let review of reviews">
-                                                <a class="card-text"><app-calificacion [calificacion]="review.rating"></app-calificacion></a>
+                                                <a class="card-text"><app-calificacion [calificacion]="review.rating"></app-calificacion><span style="margin-left: 3px; font-weight: bold;">{{review.rating}}</span></a>
                                             </div>
                                         </div>
                                     </div>
