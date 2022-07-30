@@ -55,7 +55,7 @@ export class MetricasComponent implements OnInit {
   notaA1: number; notaA2: number; notaA3: number; notaEA1: number; notaEA2: number; notaEA3: number;
   bar20: boolean; bar40: boolean; bar60: boolean; bar80: boolean; bar100: boolean;
   reviews: Review[]
-
+  comments: Comment[];
   constructor(private AuthDService: AuthDService, private ActividadService: ActividadService, private router: Router) { }
 
   ngOnInit() {
@@ -177,6 +177,7 @@ export class MetricasComponent implements OnInit {
   //Imprimir Metricas de la Actividad seleccionanda en el Modal 
   getActividadinModal(actividad: ActividadI) {
     this.loadReviews(actividad);
+    this.loadComments(actividad);
     this.ActividadService.selectedActividad = actividad;
     this.saveDataActivity(actividad);
     this.metricasActividad = new MetricaActividadI;
@@ -388,29 +389,17 @@ export class MetricasComponent implements OnInit {
   loadReviews(actividad) {
     this.ActividadService.loadReviews(actividad.id_contenidoREA).subscribe(res => {
       this.reviews = res;
-      console.log(this.reviews)
     }, error => {
       console.log(error)
     })
   }
 
-  calificacion: number = 3;
-  listQualification = [
-    {
-      "quantity": 1
-    },
-    {
-      "quantity": 2
-    },
-    {
-      "quantity": 3
-    },
-    {
-      "quantity": 4
-    },
-    {
-      "quantity": 5
-    }
-  ]
+  loadComments(actividad) {
+    this.ActividadService.loadComments(actividad.id_contenidoREA).subscribe(res => {
+      this.comments = res;
+    }, error => {
+      console.log(error)
+    })
+  }
 
 }

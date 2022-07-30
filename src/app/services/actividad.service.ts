@@ -60,8 +60,12 @@ export class ActividadService {
     return this.httpClient.get(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadAllDocentes`);
   }
 
-  loadReviews(id_actividad){
-    return this.httpClient.post<Review[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadReviews`,{id_contenidoREA:id_actividad})
+  loadReviews(id_CREA){
+    return this.httpClient.get<Review[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadCalificaciones/`+id_CREA)
+  }
+
+  loadComments(id_CREA){
+    return this.httpClient.get<Comment[]>(`http://${this.localStorageService.getItem("IPSERVER")}:3000/loadComentarios/`+id_CREA)
   }
 
 }

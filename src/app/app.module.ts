@@ -55,6 +55,7 @@ import { FilterEstudianteMetricasPipe } from './pipes/filter-estudiante-metricas
 import { FilterMiMateriasPipe } from './pipes/filter-mi-materias.pipe';
 import { FilterTallerPipe } from './pipes/filter-taller.pipe';
 import { CalificacionComponent } from "./components/index.paginas";
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { CalificacionComponent } from "./components/index.paginas";
     FilterEstudianteMetricasPipe,
     FilterMiMateriasPipe,
     FilterTallerPipe,
-    CalificacionComponent
+    CalificacionComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,
